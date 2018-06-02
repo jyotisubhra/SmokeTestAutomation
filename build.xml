@@ -72,7 +72,7 @@
 	
 <target name="clean-build" depends="ant-clean,jar"/>
 
-<target name="main" depends="ant-clean,clean,run"/>
+<target name="main" depends="ant-clean,run"/>
 
 
 
