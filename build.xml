@@ -1,0 +1,26 @@
+<?xml version="1.0" encoding="UTF-8" standalone="no"?>
+<project name="soapUIAutomation" default="testreport" basedir=".">
+<path id="project.class.path">
+    <pathelement location="C:\Tools\apache-ant-1.10.3\lib\*.jar"/>
+</path>
+<target name="clean">
+	<delete dir="target"/>
+</target>
+<target name="soapui">
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sGUI '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sTrip '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>	
+</target>
+<target name="testreport" depends="soapui">
+	
+<junitreport todir="${basedir}\target">
+	<fileset dir="${basedir}\TestSuite">
+	<include name="TEST-*.xml"/>	
+	</fileset>
+	<report todir="${basedir}\target\HTML"/>
+</junitreport>
+</target>
+</project>
