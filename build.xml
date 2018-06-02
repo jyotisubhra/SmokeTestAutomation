@@ -25,11 +25,29 @@
 
 <target name="soapui">
 	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sTDP_REST '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sTDP_NDC '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>	
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sShopping '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
 		<arg line="-r -j -f '${basedir}\TestSuite' -sGUI '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>	
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sAdServer '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
 	</exec>
 	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
 		<arg line="-r -j -f '${basedir}\TestSuite' -sTrip '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sCheckIn '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
 	</exec>	
+	<exec dir="." executable="C:\Program Files (x86)\SmartBear\SoapUI-5.3.0\bin\testrunner.bat">
+		<arg line="-r -j -f '${basedir}\TestSuite' -sUtilities '${basedir}\TestSuite\SmokeTest-ADC.xml'"/>
+	</exec>
 </target>
 	
 <target name="testreport" depends="soapui">	
