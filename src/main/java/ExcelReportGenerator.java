@@ -20,9 +20,10 @@ import org.xml.sax.SAXException;
 public class ExcelReportGenerator {
 
 	public static void generateExcel() throws ParserConfigurationException, SAXException, IOException {
-		//String path = ExcelReportGenerator.class.getClassLoader().getResource("./").getPath();
-		String path = "C:/Workspace/AlertAutomation/SmokeTestAutomation/target/classes/";
-		path= path.replaceAll("target/classes", "TestSuite");
+		
+		String path = ExcelReportGenerator.class.getProtectionDomain().getCodeSource().getLocation().getFile();
+		//String path = "C:/Workspace/AlertAutomation/SmokeTestAutomation/target/classes/";
+		path= path.replaceAll("build/jar/soapUIAutomation.jar", "TestSuite/");
 		System.out.println(path);
 		
 		
